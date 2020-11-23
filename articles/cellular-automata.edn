@@ -27,7 +27,7 @@
         :target "_blank"
         :rel "noreferrer noopener"}
     "Quil's"]
-   " functional mode made designing an animation akin to writing a"
+   " functional mode made designing an animation akin to writing a "
    [:a {:href "http://erlang.org/doc/design_principles/gen_server_concepts.html"
         :target "_blank"
         :rel "noreferrer noopener"}
