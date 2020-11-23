@@ -2,7 +2,7 @@
  :content
  [:div
   [:h1 {:class "display-4"}
-   "Simulating Cellular Automata with ClojureScript & Quil"]
+   "Cellular Automata in ClojureScript & Quil"]
   [:p {:class "lead"}
    "Recently I spent a weekend playing with Quil in ClojureScript. The
    intersection of Quil's high level drawing API, its Erlang-style
