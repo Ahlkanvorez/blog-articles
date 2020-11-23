@@ -54,8 +54,12 @@
    handling user events, and managing state."]
   [:p "I particularly enjoyed substituting in different implementations for
    the internal data structures underlying the visualization, and the
-   game logic for the simulation, by using ClojureScript multimethods.
-   They allowed me to define an interface for the grid used by the game,
+   game logic for the simulation, by using ClojureScript "
+   [:a {:href "https://clojure.org/reference/multimethods"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "multimethods."]
+   " They allowed me to define an interface for the grid used by the game,
    and the game itself, and toggle between multiple concrete implementations
    at runtime, with almost no extra code compared to explicitly using
    just one implementation."]
