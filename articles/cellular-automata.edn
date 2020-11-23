@@ -50,7 +50,7 @@
         :target "_blank"
         :rel "noreferrer noopener"}
     "ReactJS"]
-   ") to provide the same functional interface for making the UI,
+   ") to provide a similarly functional interface for making the UI,
    handling user events, and managing state."]
   [:p "I particularly enjoyed substituting in different implementations for
    the internal data structures underlying the visualization, and the
