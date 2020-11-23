@@ -11,17 +11,47 @@
    simulation of Conway's Game of Life, and the Day & Night variation."]
   [:hr {:class "my-4"}]
   [:p "The combination of technologies made for a tight feedback loop
-   during development; the ClojureScript REPL let me quickly test out
-   code changes, and Figwheel provided hot reloading with incremental
-   builds so I didn't need to run any separate recompilation or restart
-   commands. Quil's functional mode made designing an animation akin
-   to writing a gen_server in Erlang/OTP, where you write pure functions
-   that accept the current state as arguments and produce the next state
-   as the return value, which let me quickly iterate in the REPL to
-   test that the next state was as expected based on the current state.
-   Lastly, Re-Frame built on Reagent (& thus React) to provide the same
-   functional interface for making the UI, handling user events, and
-   managing state."]
+   during development; the "
+   [:a {:href "https://clojurescript.org/"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "ClojureScript"]
+   " REPL let me quickly test out code changes, and "
+   [:a {:href "https://figwheel.org/"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "Figwheel"]
+   " provided hot reloading with incremental builds so I didn't need
+   to run any separate recompilation or restart commands."
+   [:a {:href "http://www.quil.info/"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "Quil's"]
+   " functional mode made designing an animation akin to writing a"
+   [:a {:href "http://erlang.org/doc/design_principles/gen_server_concepts.html"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "gen_server in Erlang/OTP"]
+   ", where you write pure functions that accept the current state as
+   arguments and produce the next state as the return value, which let
+    me quickly iterate in the REPL to test that the next state was as
+    expected based on the current state. Lastly,"
+   [:a {:href "http://day8.github.io/re-frame/"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "Re-Frame"]
+   " built on "
+   [:a {:href "https://reagent-project.github.io/"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "Reagent"]
+   " (& thus "
+   [:a {:href "https://reactjs.org/"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "ReactJS"]
+   ") to provide the same functional interface for making the UI,
+   handling user events, and managing state."]
   [:p "I particularly enjoyed substituting in different implementations for
    the internal data structures underlying the visualization, and the
    game logic for the simulation, by using ClojureScript multimethods.
@@ -38,6 +68,11 @@
    push just my compiled, optimized JS file & HTML page to S3 whenever
    I push code to master, minimizing storage usage, and facilitating
    a smooth GitOps workflow."]
-  [:p "While the end result isn't groundbreaking, the altogether pleasant
-   development experience reinforces my sense that ClojureScript is a
-   top-notch front-end language worth mastering."]]}
+  [:p "While "
+   [:a {:href "https://cellular-automata.robertm.io"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "the end result"]
+   " isn't groundbreaking, the altogether pleasant development experience
+    reinforces my sense that ClojureScript is a top-notch front-end
+    language worth mastering."]]}
