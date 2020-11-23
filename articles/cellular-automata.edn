@@ -35,7 +35,7 @@
    ", where you write pure functions that accept the current state as
    arguments and produce the next state as the return value, which let
     me quickly iterate in the REPL to test that the next state was as
-    expected based on the current state. Lastly,"
+    expected based on the current state. Lastly, "
    [:a {:href "http://day8.github.io/re-frame/"
         :target "_blank"
         :rel "noreferrer noopener"}
