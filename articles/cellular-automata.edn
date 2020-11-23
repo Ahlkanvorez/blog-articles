@@ -29,6 +29,15 @@
    and the game itself, and toggle between multiple concrete implementations
    at runtime, with almost no extra code compared to explicitly using
    just one implementation."]
+  [:p "Deploying the webapp on AWS S3, served out by CloudFront, was
+   similarly pleasant. Since the webapp doesn't require any server-side
+   state or interaction, I can get very low page load times by relying
+   on S3 instead of running my own webserver, at a very low cost. The
+   S3 bucket & CloudFront setup only took a few clicks, and Bitbucket
+   Pipelines offered a great integration that lets me automatically
+   push just my compiled, optimized JS file & HTML page to S3 whenever
+   I push code to master, minimizing storage usage, and facilitating
+   a smooth GitOps workflow."]
   [:p "While the end result isn't groundbreaking, the altogether pleasant
    development experience reinforces my sense that ClojureScript is a
    top-notch front-end language worth mastering."]]}
