@@ -1,0 +1,34 @@
+{:date #inst "2020-11-23T19:56:15.034-00:00"
+ :content
+ [:div
+  [:h1 {:class "display-4"}
+   "Simulating Cellular Automata with ClojureScript & Quil"]
+  [:p {:class "lead"}
+   "Recently I spent a weekend playing with Quil in ClojureScript. The
+   intersection of Quil's high level drawing API, its Erlang-style
+   functional mode, and ClojureScript's exquisite data-oriented design,
+   demanded I make something with them. So, I built a configurable
+   simulation of Conway's Game of Life, and the Day & Night variation."]
+  [:hr {:class "my-4"}]
+  [:p "The combination of technologies made for a tight feedback loop
+   during development; the ClojureScript REPL let me quickly test out
+   code changes, and Figwheel provided hot reloading with incremental
+   builds so I didn't need to run any separate recompilation or restart
+   commands. Quil's functional mode made designing an animation akin
+   to writing a gen_server in Erlang/OTP, where you write pure functions
+   that accept the current state as arguments and produce the next state
+   as the return value, which let me quickly iterate in the REPL to
+   test that the next state was as expected based on the current state.
+   Lastly, Re-Frame built on Reagent (& thus React) to provide the same
+   functional interface for making the UI, handling user events, and
+   managing state."]
+  [:p "I particularly enjoyed substituting in different implementations for
+   the internal data structures underlying the visualization, and the
+   game logic for the simulation, by using ClojureScript multimethods.
+   They allowed me to define an interface for the grid used by the game,
+   and the game itself, and toggle between multiple concrete implementations
+   at runtime, with almost no extra code compared to explicitly using
+   just one implementation."]
+  [:p "While the end result isn't groundbreaking, the altogether pleasant
+   development experience reinforces my sense that ClojureScript is a
+   top-notch front-end language worth mastering."]]}
