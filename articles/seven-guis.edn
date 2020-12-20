@@ -1,0 +1,41 @@
+{:date #inst "2020-12-20T05:03:50.805-00:00"
+ :content
+ [:div
+  [:h1 {:class "display-4"}
+   "7 GUIs"]
+  [:p {:class "lead"}
+   "This is a placeholder so I can link to live demos for each of the "
+   [:a {:href "https://eugenkiss.github.io/7guis/"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "7 GUIs"]
+   "."]
+  [:ol
+   [:li [:a {:href "https://7gui-counter.robertm.io/"
+             :target "_blank"
+             :rel "noreferrer noopener"}
+         "Counter"]]
+   [:li [:a {:href "https://7gui-temperatures.robertm.io/"
+             :target "_blank"
+             :rel "noreferrer noopener"}
+         "Temperature Converter"]]
+   [:li [:a {:href "https://7gui-flights.robertm.io/"
+             :target "_blank"
+             :rel "noreferrer noopener"}
+         "Flight Booker"]]
+   [:li [:a {:href "https://7gui-timer.robertm.io/"
+             :target "_blank"
+             :rel "noreferrer noopener"}
+         "Timer"]]
+   [:li [:a {:href "https://7gui-crud.robertm.io/"
+             :target "_blank"
+             :rel "noreferrer noopener"}
+         "CRUD"]]
+   [:li [:a {:href "https://7gui-circles.robertm.io/"
+             :target "_blank"
+             :rel "noreferrer noopener"}
+         "Circle Drawer"]]
+   [:li [:a {:href "https://7gui-cells.robertm.io/"
+             :target "_blank"
+             :rel "noreferrer noopener"}
+         "Cells"]]]]}
