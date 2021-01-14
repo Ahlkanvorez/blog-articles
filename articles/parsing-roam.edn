@@ -8,7 +8,7 @@
    [:a {:href "https://roamresearch.com"
         :target "_blank"
         :rel "noreferrer noopener"}
-    "Roam."]
+    "Roam. "]
    "Much of the syntax is reminiscent of Markdown, with the addition of "
    "recursive structures like [[links]] that establish sophisticated "
    "relationships between documents. I wanted to have an interactive "
@@ -21,7 +21,7 @@
    "rapidly as I worked to resolve edge cases that my tests kept "
    "discovering. After deciding my first approach was growing too "
    "complex, I rewrote the parser from scratch (but satisfying the same "
-   "unit tests) to be more generic."]
+   "unit tests) to be more generic. "]
 
   [:p
    "My second approach accepted a dictionary of open & close tokens, "
@@ -70,10 +70,11 @@
   [:p
    "As a final test to convince myself this was the right approach, I "
    "added a post-parsing layer to traverse the parse tree and update "
-   "the contents of code nodes prefixed with `math:` by evaluating them "
-   "using math.js. This was mostly trivial; the only minor complication "
-   "is that I had to escape ^ and * characters, since they're used as "
-   "significant tokens for highlighted and bold text. "]
+   "the contents of code nodes prefixed with " [:code "math:"]
+   " by evaluating them using math.js. This was mostly trivial; the "
+   "only minor complication is that I had to escape ^ and * characters, "
+   "since they're used as significant tokens for highlighted and bold "
+   "text. "]
 
   [:p
    "In the end, my demo worked satisfactorily. After adding some "

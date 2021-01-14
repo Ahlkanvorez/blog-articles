@@ -11,7 +11,7 @@
     "7 GUIs"]
    " front end challenge. The first task is trivial, making a clickable "
    "button, but they increase in complexity until the final task, which "
-   "is a functioning spreadsheet with formulas and cell references."
+   "is a functioning spreadsheet with formulas and cell references. "
    "Since I've been enjoying ClojureScript, I figured I'd see how using "
    "it for all seven tasks would feel. And, since the point is to gain "
    "an educational experience, I solved them using only Reagent."]
