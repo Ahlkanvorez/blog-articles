@@ -9,7 +9,7 @@
         :target "_blank"
         :rel "noreferrer noopener"}
     "Roam. "]
-   "Much of the syntax is reminiscent of Markdown, with the addition of "
+   " Much of the syntax is reminiscent of Markdown, with the addition of "
    "recursive structures like [[links]] that establish sophisticated "
    "relationships between documents. I wanted to have an interactive "
    "demo webapp using the parser, and I wanted to use Clojure, so I "
