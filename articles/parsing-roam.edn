@@ -1,0 +1,97 @@
+{:date #inst "2021-01-14T22:09:50.947-00:00"
+ :content
+ [:div
+  [:h1 {:class "display-4"}
+   "Parsing Roam"]
+  [:p {:class "lead"}
+   "I recently wrote a parser for the markup language used by "
+   [:a {:href "https://roamresearch.com"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "Roam. "]
+   " Much of the syntax is reminiscent of Markdown, with the addition of "
+   "recursive structures like [[links]] that establish sophisticated "
+   "relationships between documents. I wanted to have an interactive "
+   "demo webapp using the parser, and I wanted to use Clojure, so I "
+   "started with ClojureScript. "]
+
+  [:p
+   "It was relatively easy to write a quick parser that could handle "
+   "most of the syntax, but I found my code expanding in size rather "
+   "rapidly as I worked to resolve edge cases that my tests kept "
+   "discovering. After deciding my first approach was growing too "
+   "complex, I rewrote the parser from scratch (but satisfying the same "
+   "unit tests) to be more generic. "]
+
+  [:p
+   "My second approach accepted a dictionary of open & close tokens, "
+   "and a dictionary defining higher level nodes in terms of simpler "
+   "ones. For example, where my first parser had trouble with deep "
+   "nesting of aliases and links together, my second parser would parse "
+   "that string into an intermediate tree of nested backets and "
+   "parentheses. Then, as a second pass, it would traverse that tree and "
+   "replace two brackets directly nested with a link, or bracket and "
+   "parentheses nodes directly adjacent with an alias, etc. This worked "
+   "well for far more inputs, as well as proving more efficient than my "
+   "first approach. "]
+   
+  [:p
+   "However, as I started testing extreme edge cases with significant "
+   "nesting & very lengthy parse strings, and refactoring my code to "
+   "accomodate them, I again found the approach inflexible and prone to "
+   "code bloat. I decided to take a step back and do some reading on "
+   "parsers, since I had never studied them formally. "]
+
+  [:p
+   "Among other resources, I came across the paper \"Parsing Expression "
+   "Grammars\" (Bryan Ford), and felt it described just what I needed: "
+   "a generic grammatical definition that could be easily extended "
+   "without having to modify the parser itself, and that didn't generate "
+   "ambiguities requiring large amounts of code bloat to address. I "
+   "quickly implemented a parser inspired by that paper in ClojureScript "
+   "which passed all the tests I had, and refactored my demo webapp to "
+   "use it. The PEG parser accepts a map of keyword rule names to normal "
+   "Clojure data structures representing the PEG language. It then "
+   "compiles those rules into ordinary Clojure functions which call each "
+   "other as appropriate to parse the string without having to traverse "
+   "any grammatical rule structures. In this way, it's similar to a "
+   "recursive descent parser generator. "]
+
+  [:p
+   "One intriguing characteristic of the parser is that it can trivially "
+   "be converted into a packrat parser; all of the PEG parse functions "
+   "are defined using a single macro that unwinds into lambdas that map "
+   "the parse string to a parse result. If that macro wraps the lambdas "
+   "in memoize, all of the intermediate results will be cached, and no "
+   "redundant parses will occur -- resulting in a packrat parser. Since "
+   "there's a bit of time overhead in that memoization process, and "
+   "significant memory overhead, I opted not to do this by default. "]
+
+  [:p
+   "As a final test to convince myself this was the right approach, I "
+   "added a post-parsing layer to traverse the parse tree and update "
+   "the contents of code nodes prefixed with " [:code "math:"]
+   " by evaluating them using math.js. This was mostly trivial; the "
+   "only minor complication is that I had to escape ^ and * characters, "
+   "since they're used as significant tokens for highlighted and bold "
+   "text. "]
+
+  [:p
+   "In the end, my demo worked satisfactorily. After adding some "
+   "debouncing to the inputs to prevent excessive parsing, the UI felt "
+   "smooth, and I was able to exercise parsing, updating, and evaluating "
+   "roam strings dynamically. I also added a small test benchmark in "
+   "the webapp which would generate 1,000 random strings that look "
+   "roughly like real data (though the text is jumbled excerpts from "
+   "Ovid's metamorphoses), and parse them all in under 500ms. Most runs "
+   "in my tests finished well under that time period, with a few outliers "
+   "taking longer. "]
+
+  [:p
+   "In the process, I learned quite a bit about how parsing works, and "
+   "am excited to apply this knowledge on new projects. The live demo "
+   "webapp is hosted on S3 & CloudFront: "
+   [:a {:href "https://roam-parser.robertm.io"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "Roam Parser"]]]}

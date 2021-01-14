@@ -1,0 +1,100 @@
+{:date #inst "2021-01-14T22:09:50.947-00:00"
+ :content
+ [:div
+  [:h1 {:class "display-4"}
+   "7 GUIs"]
+  [:p {:class "lead"}
+   "Over vacation before Christmas, I came across the "
+   [:a {:href "https://eugenkiss.github.io/7guis/"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "7 GUIs"]
+   " front end challenge. The first task is trivial, making a clickable "
+   "button, but they increase in complexity until the final task, which "
+   "is a functioning spreadsheet with formulas and cell references. "
+   "Since I've been enjoying ClojureScript, I figured I'd see how using "
+   "it for all seven tasks would feel. And, since the point is to gain "
+   "an educational experience, I solved them using only Reagent."]
+
+  [:p
+   "For each task, I've deployed a live demo on S3 & CloudFront:"
+   [:ol
+    [:li [:a {:href "https://7gui-counter.robertm.io/"
+              :target "_blank"
+              :rel "noreferrer noopener"}
+          "Counter"]]
+    [:li [:a {:href "https://7gui-temperatures.robertm.io/"
+              :target "_blank"
+              :rel "noreferrer noopener"}
+          "Temperature Converter"]]
+    [:li [:a {:href "https://7gui-flights.robertm.io/"
+              :target "_blank"
+              :rel "noreferrer noopener"}
+          "Flight Booker"]]
+    [:li [:a {:href "https://7gui-timer.robertm.io/"
+              :target "_blank"
+              :rel "noreferrer noopener"}
+          "Timer"]]
+    [:li [:a {:href "https://7gui-crud.robertm.io/"
+              :target "_blank"
+              :rel "noreferrer noopener"}
+          "CRUD"]]
+    [:li [:a {:href "https://7gui-circles.robertm.io/"
+              :target "_blank"
+              :rel "noreferrer noopener"}
+          "Circle Drawer"]]
+    [:li [:a {:href "https://7gui-cells.robertm.io/"
+              :target "_blank"
+              :rel "noreferrer noopener"}
+          "Cells"]]]]
+
+  [:p
+   "The first several tasks weren't very instructive in themselves; "
+   "I mostly used them as an opportunity to find a good lightweight "
+   "project structure. I found using the clojure cli tools most "
+   "enjoyable, backed by shadow-cljs for ClojureScript compilation. "
+   "They also impressed upon me how sufficient Reagent by itself is "
+   "for most front end work; Re-Frame is great, and in my prior cljs "
+   "endeavors I've reached for it early, but this has convinced me "
+   "that plain Reagent is good enough for most needs. The CRUD task "
+   "in particular is a good demonstration that normal Reagent atoms "
+   "and thoughtful code organization is good enough to manage state "
+   "between components."]
+
+  [:p
+   "The circles task was the first time I used the native canvas "
+   "APIs with ClojureScript, which was surprisingly smooth. In other "
+   "cljs graphics projects, I've reached for libraries like Quil to "
+   "add a layer of abstraction in the middle, but that's certainly "
+   "not necessary in general. It could be fun to extend the circles "
+   "task into a more general webapp for drawing, like Paint."]
+
+  [:p
+   "The cells task was certainly the most involved of them all. I "
+   "probably spent the most time just getting the grid exactly how I "
+   "wanted, with rows resizeable vertically & columns horizontally, "
+   "and cell borders that were comfortable to look at. Supporting cell "
+   "refs & ranges was made much easier by Clojure's great core library; "
+   "I used clojure maps and sets to create a simple dependency graph "
+   "based on what cell formulas referred to, and recursively triggered "
+   "refreshes of the values of any cells depending on the cell whose "
+   "formula changed. This was further simplified by keeping track of the "
+   "computed value separately from the formula for a cell. Once I had "
+   "that in place, it was easy to write a stack based evaluator for the "
+   "formulas themselves, since all the operations are in the form of "
+   "function calls (e.g. add(A1, B2)), making it equivalent to parsing "
+   "arithmetic in prefix notation."]
+
+  [:p
+   "The cells task in particular has left me wanting to build more onto "
+   "it. Since I made it a point to implement each task following the "
+   "specification closely, the spreadsheet has some quirks I'd "
+   "change were I to extend it, such as having to double click a "
+   "cell to edit it. I may create a follow up project using the cells "
+   "repo as a starting point, and polish the UI more, add in more "
+   "features, and see where it takes me."]
+
+  [:p
+   "All in all, the 7GUIs tasks are great fun, and I'd encourage any "
+   "developer who enjoys front end work to unsheathe a new language or "
+   "framework they think might be fun and implement the seven GUIs."]]}
