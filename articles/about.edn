@@ -1,9 +1,23 @@
-{:date #inst "2020-08-29T02:57:52.703-00:00"
+{:date #inst "2021-02-20T13:00:00"
  :content
  [:div
   [:h1 {:class "display-4"}
    "About Me"]
   [:p {:class "lead"}
-   "As a Senior Software Engineer at ION Geophysical, I apply Agile & DevOps principles to coordinate with other teams, modernize our systems and applications, and automate their testing and deployment. I use Ansible, Docker, and Python to enable automated, repeatable deployments both on-premises and in public clouds, such as AWS."]
-  [:p "Additionally, I design, implement, and maintain applications and services using Test-Driven Development to facilitate the work of Geophysicists, including highly concurrent Erlang applications that interact with RabbitMQ, and Graph & NoSQL databases; full-stack webapps using NodeJS and ReactJS for custom graph visualizations; and Qt-based C++ applications."]
-  [:p "I place great emphasis on continually learning & sharing what I learn. At ION, I spent several weeks teaching other developers Erlang so they could contribute to our codebases in that language, and I successfully started regular meetings in multiple teams dedicated to sharing new interesting things we've learned. Outside work, I enjoy studying new technologies, Mathematics, and programming in functional languages like Clojure."]]}
+   "I lead the backend engineering efforts at "
+   [:a {:href "https://www.investcomposer.com"
+        :target "_blank"
+        :rel "noreferrer noopener"}
+    "Composer"]
+   " where I strive to grow as an engineer, share as much as I learn, and put the best of Agile & "
+   "DevOps principles into practice. I have a special love for Clojure, which I use at Composer to "
+   "build exciting new automated investing tools, and also outside work coding for fun."]
+  [:p
+   "Before Composer, I was a Senior Software Engineer at ION Geophysical, where I coordinated with "
+   "other teams to modernize their systems & applications. I used Ansible, Docker, and Python to enable "
+   "automated, repeatable deployments both on-premises and in public clouds, such as AWS. I also designed & "
+   "maintained apps & services using Test-Driven Development, such as data transform services in Erlang using RabbitMQ, "
+   "Neo4j, & CouchDB, and spent several weeks teaching other developers Erlang so they could contribute to the projects."]
+  [:p
+   "Outside work, I enjoy playing with new technologies, studying Mathematics, programming in functional languages like "
+   "Clojure, and reading great classical & mediaeval works in Greek and Latin."]]}
